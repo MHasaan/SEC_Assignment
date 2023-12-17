@@ -86,7 +86,6 @@ class Department
                     break; // This break is not really necessary
             }
         }
-        input.close();
     }
 
     void addTeacher()
@@ -118,11 +117,13 @@ class Department
     void displayTeachers()
     {
         boolean flag = false;
+        System.out.println();
         for(int i = 0; i < totalTeachers; i++)
         {
             flag=true;
             System.out.println(i+1 + ". "+ teachers[i].name);
         }
+        System.out.println();
         if(!flag)
             System.out.println("No Teachers Registered so far");
     }
@@ -131,14 +132,13 @@ class Department
     {
         Scanner input = new Scanner(System.in);
         int index = 0;
+        System.out.println("Select the teacher: \nPress");
+        displayTeachers();
+        index = input.nextInt();
+        System.out.println(teachers[index-1].name + " selected");
         boolean condition = true;
         while (condition) 
         {
-            System.out.println("Select the teacher: \n Press");
-            displayTeachers();
-            index = input.nextInt();
-            System.out.println(teachers[index-1].name + " selected");
-
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
@@ -173,7 +173,7 @@ class Department
     {
         Scanner input = new Scanner(System.in);
         int index = 0;
-        System.out.println("Select the course: \n Press");
+        System.out.println("Select the course: \nPress");
         displayCourses();
         index = input.nextInt();
         System.out.println(courses[index-1].name + " selected");
@@ -304,7 +304,6 @@ class Department
         name = input.nextLine();
         Course course = new Course(name);
         registerCourse(course);
-        input.close();
     }
 
     void registerCourse(Course course)
@@ -323,9 +322,14 @@ class Department
 
     void displayCourses()
     {
+        boolean flag=false;
         for(int i = 0; i < totalCourses; i++)
         {
+            flag=true;
             System.out.println(i+1 + ". "+ courses[i].name);
+        }
+        if(!flag){
+            System.out.println("No Courses Offered by "+this.getName()+" Department at the Moment");
         }
     }
 }

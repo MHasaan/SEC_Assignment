@@ -79,13 +79,17 @@ class Teacher extends User
     {
         System.out.println("Assigned Courses:");
         int counter = 1;
+        boolean flag=false;
         for (Course course : courses) 
         {
             if (course != null) 
             {
+                flag = true;
                 System.out.println(counter++ + "." + course.getName());
             }
         }
+        if(!flag)
+            System.out.println("No course was Assigned");
     }
 
     void dispalyStudentsReport()
