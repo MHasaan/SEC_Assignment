@@ -55,6 +55,7 @@ class Department
         boolean condition = true;
         while (condition)
         {
+            System.out.print("\033\143");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
@@ -86,7 +87,7 @@ class Department
                     break; // This break is not really necessary
             }
         }
-        input.close();
+        // input.close();
     }
 
     void addTeacher()
@@ -99,7 +100,7 @@ class Department
         password = input.nextLine();
         Teacher teacher = new Teacher(name, password);
         registerTeacher(teacher);
-        input.close();
+        // input.close();
     }
 
     void registerTeacher(Teacher teacher) 
@@ -128,20 +129,21 @@ class Department
         Scanner input = new Scanner(System.in);
         int index = 0;
         boolean condition = true;
+        System.out.print("\033\143");
+        System.out.println("Select the teacher: \n Press");
+        displayTeachers();
+        index = input.nextInt();
         while (condition) 
         {
-            System.out.println("Select the teacher: \n Press");
-            displayTeachers();
-            index = input.nextInt();
+            System.out.print("\033\143");
             System.out.println(teachers[index-1].name + " selected");
-
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
             System.out.println("| Options:                                |");
             System.out.println("|        1. Assign Course                 |");
             System.out.println("|        2. View Assigned Courses         |");
-            System.out.println("|        2. Exit                          |");
+            System.out.println("|        3. Exit                          |");
             System.out.println("===========================================");
             System.out.print("Select option: ");
             int selection = input.nextInt();
@@ -162,7 +164,7 @@ class Department
                     break; // This break is not really necessary
             }
         }
-        input.close();
+        // input.close();
     }
 
     void assignCourseToTeacher(Teacher teacher)
@@ -174,7 +176,7 @@ class Department
         index = input.nextInt();
         System.out.println(courses[index-1].name + " selected");
         teacher.assignCourse(courses[index-1]);
-        input.close();
+        // input.close();
     }
 
 
@@ -188,14 +190,14 @@ class Department
         boolean condition = true;
         while (condition) 
         {
- 
+            System.out.print("\033\143");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
             System.out.println("| Options:                                |");
             System.out.println("|        1. Register Student              |");
             System.out.println("|        2. View Registered Students      |");
-            System.out.println("|        2. Exit                          |");
+            System.out.println("|        3. Exit                          |");
             System.out.println("===========================================");
             System.out.print("Select option: ");
             int selection = input.nextInt();
@@ -216,7 +218,7 @@ class Department
                     break; // This break is not really necessary
             }
         }
-        input.close();
+        // input.close();
     }
 
     void addStudent()
@@ -229,7 +231,7 @@ class Department
         password = input.nextLine();
         Student student = new Student(name, password);
         registerStudent(student);
-        input.close();
+        // input.close();
     }
 
     void registerStudent(Student student)
@@ -259,10 +261,11 @@ class Department
 
     void manageCourse()
     {
+        Scanner input = new Scanner(System.in);
         boolean condition = true;
         while (condition) 
         {
-            Scanner input = new Scanner(System.in);
+            System.out.print("\033\143");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
@@ -300,7 +303,7 @@ class Department
         name = input.nextLine();
         Course course = new Course(name);
         registerCourse(course);
-        input.close();
+        // input.close();
     }
 
     void registerCourse(Course course)

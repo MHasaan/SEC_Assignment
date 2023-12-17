@@ -11,6 +11,7 @@ class Main
 
         while (condition) 
         {
+            System.out.print("\033\143");
             // Display menu graphics
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
@@ -43,7 +44,7 @@ class Main
                     break; // This break is not really necessary
             }
         }
-        input.close();
+        // input.close();
     }
 
     static void manageDepartment(Department department)
@@ -52,6 +53,7 @@ class Main
         boolean condition = true;
         while (condition) 
         {
+            System.out.print("\033\143");
             System.out.println("Department Name: " + department.Name);
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
@@ -59,7 +61,7 @@ class Main
             System.out.println("| Options:                                |");
             System.out.println("|        1. Manage Teachers               |");
             System.out.println("|        2. Manage Students               |");
-            System.out.println("|        3. Manage Courses                  |");
+            System.out.println("|        3. Manage Courses                 |");
             System.out.println("|        4. Exit                          |");
             System.out.println("===========================================");
             System.out.print("Select option: ");
@@ -83,7 +85,7 @@ class Main
                     System.out.println("Invalid selection");
             }
         }
-        input.close();
+        // input.close();
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -93,6 +95,7 @@ class Main
         boolean condition = true;
         while (condition) 
         {
+            System.out.print("\033\143");
             switch (LoginMenu()) 
             {
                 case 1:
@@ -116,17 +119,17 @@ class Main
         System.out.println("Enter your password: ");
         String password = input.nextLine();
 
-        for(Student student : department.students)
+        for(int index = 0; index < department.totalStudents; index++)
         {
-            if(student.name.equals(name) && student.password.equals(password))
+            if(department.students[index].name.equals(name) && department.students[index].password.equals(password))
             {
-                student.studentPortal(department);
-                input.close();
-                return;
+                department.students[index].studentPortal(department);
+                // input.close();
+                break;
             }
         }
         System.out.println("Invalid credentials\nTry Again");
-        input.close();
+        // input.close();
     }
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -136,6 +139,7 @@ class Main
         boolean condition = true;
         while (condition) 
         {
+            System.out.print("\033\143");
             switch (LoginMenu())
             {
                 case 1:
@@ -159,17 +163,17 @@ class Main
         System.out.println("Enter your password: ");
         String password = input.nextLine();
 
-        for(Teacher teacher : department.teachers)
+        for(int index = 0; index < department.totalTeachers; index++)
         {
-            if(teacher.name.equals(name) && teacher.password.equals(password))
+            if(department.teachers[index].name.equals(name) && department.teachers[index].password.equals(password))
             {
-                teacher.teacherPortal(department);
-                input.close();
-                return;
+                department.teachers[index].teacherPortal(department);
+                // input.close();
+                break;
             }
         }
         System.out.println("Invalid credentials");
-        input.close();
+        // input.close();
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -188,7 +192,7 @@ class Main
         System.out.println("===========================================");
         System.out.print("Select option: ");
         int choice = input.nextInt();
-        input.close();
+        // input.close();
         return choice;
     }
 }

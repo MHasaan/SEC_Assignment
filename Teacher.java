@@ -37,6 +37,7 @@ class Teacher extends User
         boolean condition = true;
         while (condition)
         {
+            System.out.print("\033\143");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
@@ -61,7 +62,7 @@ class Teacher extends User
                     uploadMarks();
                     break;
                 case 4:
-                    upoadAttendence();
+                    uploadAttendence();
                     break;
                 case 5:
                     System.out.println("Exit selected");
@@ -135,7 +136,7 @@ class Teacher extends User
         input.close();
     }
 
-    void upoadAttendence()
+    void uploadAttendence()
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Select course: \n Press 0 to Select All Courses");
@@ -164,5 +165,4 @@ class Teacher extends User
         }
         input.close();
     }
-
 }
