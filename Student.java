@@ -23,9 +23,9 @@ public class Student extends User
     {
         Scanner input = new Scanner(System.in);
         boolean condition = true;
+        System.out.print("\033\143");
         while (condition)
         {
-            System.out.print("\033\143");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
@@ -56,7 +56,7 @@ public class Student extends User
                     System.out.println("Invalid selection");
             }
         }
-        input.close();
+        // input.close();
     }
 
 
@@ -69,7 +69,7 @@ public class Student extends User
         index = input.nextInt();
         System.out.println(department.courses[index-1].name + " selected");
         registerCourse(department.courses[index-1]);
-        input.close();
+        // input.close();
     }
 
     void registerCourse(Course course) 

@@ -53,9 +53,9 @@ class Department
     {
         Scanner input = new Scanner(System.in);
         boolean condition = true;
+        System.out.print("\033\143");
         while (condition)
         {
-            System.out.print("\033\143");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
@@ -84,7 +84,7 @@ class Department
                     break;
                 default:
                     System.out.println("Invalid selection");
-                    break; // This break is not really necessary
+                    break;
             }
         }
         // input.close();
@@ -130,12 +130,11 @@ class Department
         int index = 0;
         boolean condition = true;
         System.out.print("\033\143");
-        System.out.println("Select the teacher: \n Press");
+        System.out.println("Select the teacher: \nPress");
         displayTeachers();
         index = input.nextInt();
         while (condition) 
         {
-            System.out.print("\033\143");
             System.out.println(teachers[index-1].name + " selected");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
@@ -161,7 +160,7 @@ class Department
                     break;
                 default:
                     System.out.println("Invalid selection");
-                    break; // This break is not really necessary
+                    break;
             }
         }
         // input.close();
@@ -171,7 +170,7 @@ class Department
     {
         Scanner input = new Scanner(System.in);
         int index = 0;
-        System.out.println("Select the course: \n Press");
+        System.out.println("Select the course: \nPress");
         displayCourses();
         index = input.nextInt();
         System.out.println(courses[index-1].name + " selected");
@@ -188,9 +187,9 @@ class Department
     {
         Scanner input = new Scanner(System.in);
         boolean condition = true;
+        System.out.print("\033\143");
         while (condition) 
         {
-            System.out.print("\033\143");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
@@ -215,7 +214,7 @@ class Department
                     break;
                 default:
                     System.out.println("Invalid selection");
-                    break; // This break is not really necessary
+                    break;
             }
         }
         // input.close();
@@ -263,9 +262,9 @@ class Department
     {
         Scanner input = new Scanner(System.in);
         boolean condition = true;
+        System.out.print("\033\143");
         while (condition) 
         {
-            System.out.print("\033\143");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");

@@ -12,7 +12,6 @@ class Main
         while (condition) 
         {
             System.out.print("\033\143");
-            // Display menu graphics
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
@@ -38,10 +37,10 @@ class Main
                 case 4:
                     System.out.println("Exit selected");
                     condition = false;
-                    return;
+                    break;
                 default:
                     System.out.println("Invalid selection");
-                    break; // This break is not really necessary
+                    break;
             }
         }
         // input.close();
@@ -61,7 +60,7 @@ class Main
             System.out.println("| Options:                                |");
             System.out.println("|        1. Manage Teachers               |");
             System.out.println("|        2. Manage Students               |");
-            System.out.println("|        3. Manage Courses                 |");
+            System.out.println("|        3. Manage Courses                |");
             System.out.println("|        4. Exit                          |");
             System.out.println("===========================================");
             System.out.print("Select option: ");
@@ -93,9 +92,9 @@ class Main
     static void studentPortal(Department department)
     {
         boolean condition = true;
+        System.out.print("\033\143");
         while (condition) 
         {
-            System.out.print("\033\143");
             switch (LoginMenu()) 
             {
                 case 1:
@@ -137,14 +136,14 @@ class Main
     static void teacherPortal(Department department)
     {
         boolean condition = true;
+        System.out.print("\033\143");
         while (condition) 
         {
-            System.out.print("\033\143");
             switch (LoginMenu())
             {
                 case 1:
                     teacherLogin(department);
-                    break;
+                    return;
                 case 2:
                     System.out.println("Exit selected");
                     condition = false;
@@ -169,7 +168,7 @@ class Main
             {
                 department.teachers[index].teacherPortal(department);
                 // input.close();
-                break;
+                return;
             }
         }
         System.out.println("Invalid credentials");
@@ -182,7 +181,6 @@ class Main
     static int LoginMenu()
     {
         Scanner input = new Scanner(System.in);
-        // Display menu graphics
         System.out.println("===========================================");
         System.out.println("|               MENU SELECTION            |");
         System.out.println("===========================================");

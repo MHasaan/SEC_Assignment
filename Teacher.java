@@ -35,9 +35,9 @@ class Teacher extends User
     {
         Scanner input = new Scanner(System.in);
         boolean condition = true;
+        System.out.print("\033\143");
         while (condition)
         {
-            System.out.print("\033\143");
             System.out.println("===========================================");
             System.out.println("|               MENU SELECTION            |");
             System.out.println("===========================================");
@@ -66,13 +66,13 @@ class Teacher extends User
                     break;
                 case 5:
                     System.out.println("Exit selected");
-                    condition = true;
+                    condition = false;
                     break;
                 default:
                     System.out.println("Invalid selection");
             }
         }
-        input.close();
+        // input.close();
     }
 
 
@@ -92,10 +92,10 @@ class Teacher extends User
     void dispalyStudentsReport()
     {
         Scanner input = new Scanner(System.in);
-        System.out.println("Select course: \n Press 0 to Select All Courses");
+        System.out.println("Select course: \nPress 0 to Select All Courses");
         displayAssignedCourses();
         int courseIndex = input.nextInt();
-        input.close();
+        // input.close();
         for (Course course : courses) 
         {
             if (course != null && ( courseIndex == 0 || course == courses[courseIndex - 1] ) )
@@ -109,7 +109,7 @@ class Teacher extends User
     void uploadMarks()
     {
         Scanner input = new Scanner(System.in);
-        System.out.println("Select course: \n Press 0 to Select All Courses");
+        System.out.println("Select course: \nPress 0 to Select All Courses");
         displayAssignedCourses();
         int courseIndex = input.nextInt();
 
@@ -118,7 +118,7 @@ class Teacher extends User
             if (course != null && ( courseIndex == 0 || course == courses[courseIndex - 1] ) )
             {
                 System.out.println("course: " + course.getName());
-                System.out.println("Select student: \n Press 0 to Enter Marks for All Students");
+                System.out.println("Select student: \nPress 0 to Enter Marks for All Students");
                 course.displayStudents();
                 int studentIndex = input.nextInt();
 
@@ -133,13 +133,13 @@ class Teacher extends User
                 }
             }
         }
-        input.close();
+        // input.close();
     }
 
     void uploadAttendence()
     {
         Scanner input = new Scanner(System.in);
-        System.out.println("Select course: \n Press 0 to Select All Courses");
+        System.out.println("Select course: \nPress 0 to Select All Courses");
         displayAssignedCourses();
         int courseIndex = input.nextInt();
 
@@ -148,7 +148,7 @@ class Teacher extends User
             if (course != null && ( courseIndex == 0 || course == courses[courseIndex - 1] ) )
             {
                 System.out.println("course: " + course.getName());
-                System.out.println("Select student: \n Press 0 to Enter Attendence for All Students");
+                System.out.println("Select student: \nPress 0 to Enter Attendence for All Students");
                 course.displayStudents();
                 int studentIndex = input.nextInt();
 
@@ -163,6 +163,6 @@ class Teacher extends User
                 }
             }
         }
-        input.close();
+        // input.close();
     }
 }
