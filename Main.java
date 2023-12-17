@@ -59,7 +59,7 @@ class Main
             System.out.println("| Options:                                |");
             System.out.println("|        1. Manage Teachers               |");
             System.out.println("|        2. Manage Students               |");
-            System.out.println("|        3. Manage Courses                  |");
+            System.out.println("|        3. Manage Courses                |");
             System.out.println("|        4. Exit                          |");
             System.out.println("===========================================");
             System.out.print("Select option: ");

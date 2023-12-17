@@ -99,7 +99,7 @@ class Department
         password = input.nextLine();
         Teacher teacher = new Teacher(name, password);
         registerTeacher(teacher);
-        input.close();
+        
     }
 
     void registerTeacher(Teacher teacher) 
@@ -117,10 +117,14 @@ class Department
 
     void displayTeachers()
     {
+        boolean flag = false;
         for(int i = 0; i < totalTeachers; i++)
         {
+            flag=true;
             System.out.println(i+1 + ". "+ teachers[i].name);
         }
+        if(!flag)
+            System.out.println("No Teachers Registered so far");
     }
 
     void manageTeacher()
